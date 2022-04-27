@@ -1,0 +1,51 @@
+body {
+    background: linear-gradient(to bottom, #33ccff 0%, #66ffcc 100%);
+    background-attachment: fixed;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2{
+    font-size: 24px;
+}
+
+p.intro {
+    font-size: 18px;
+}
+
+#header hr {
+    background-color: white;
+    height: 10px;
+}
+
+#content hr {
+    background-color: green;
+    height: 3px;
+}
+
+#footer hr {
+    background-color: white;
+    height: 10px;
+}
+
+.course_list  li {
+    font-style: italic;
+    font-size: 18px;
+}
+
+.movies_list > li > img {
+    max-width: 150px;
+    padding: 20px;
+}
+
+#content table tr td  {
+    padding-left: 15px;
+}
+    
+#content table tr td  img {
+    max-width: 300px;
+    padding: 0 15px 0 0;
+}

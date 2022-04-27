@@ -1,0 +1,65 @@
+body {
+    color: #404040;
+    font-family: Georgia, Garamond, sans-serif;
+    background-image: url("silverware.jpg");
+}
+h1, h2, h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #A4A400;
+    background: #F0F0F0;
+    text-decoration: underline;
+    letter-spacing: 0.25em;
+    display: block;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+.main_heading{
+    text-align: center;
+    font: 22pt;
+    font-weight: bold;
+}
+
+h3{
+    display: table;
+    font-size: 18pt;
+}
+
+.cooking_steps p{
+    margin: 0;
+}
+
+.inner_list, .ingredients{
+    list-style-image: url('pie_icon.gif');
+}
+
+blockquote {
+    font-style: italic;
+    background: #FFFFA8 ;
+}
+
+a {
+	color:#A4A400; 
+}
+
+.footer {
+    text-align: right;
+}
+
+.copyright {
+    float: right;
+    width: 300px;
+    
+}
+
+
+.copyright p {
+    text-align: left;
+    border-right: #404040 solid;
+}
+
+
+
