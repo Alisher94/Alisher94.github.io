@@ -1,0 +1,67 @@
+body {
+	background-color: white;
+	padding-left: 1em;
+    font-size: 12pt;
+	font-family: "Verdana", "Geneva", sans-serif;
+}
+
+h1 {
+    color: gray;
+    margin-bottom: 0;
+}
+
+h1 > span, sup {
+    color: blue;
+}
+
+sup {
+    font-size: 18pt;
+}
+
+.content > form{
+    width: 600px;
+}
+
+.header {
+	margin-bottom: 2em;
+}
+
+fieldset {
+	background-color: #E0E0FF;
+	border: 2px outset gray;
+	border-radius: 10px;
+}
+
+fieldset > table {
+    font-weight: bold;
+}
+
+legend {
+	background-color: white;
+	border: 2px outset gray;
+	padding: 0.2em;
+}
+
+tr td {
+    padding-bottom: 10px;
+}
+
+a.link{
+    font-weight: normal;
+}
+
+a {
+	color: #F44;
+	text-decoration: none;
+}
+
+input[type="submit"] {
+	background-color: #FAA;
+	font-size: 24px;
+	font-weight: bold;
+}
+
+a.back img {
+	vertical-align: middle;
+    max-width: 25px;
+}
