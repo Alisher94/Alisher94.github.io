@@ -1,0 +1,24 @@
+.content {
+    width: 720px;
+    align-content: center;
+    margin: auto;
+    background-color: aquamarine;
+}
+
+h1 {
+    text-align: center;
+}
+.label {
+    width: 35%;
+}
+
+#name {
+    width: 250px;
+}
+
+button {
+    padding: 10px;
+    background: green;
+    color: white;
+    font-weight: bold;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Retrieve Grade</title>
+        <link href="grade_exercises.css" type="text/css" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="content">
+            <h1>Retrieve your grade</h1>
+            <form action="http://mumstudents.org/params.php" method="post">
+                <fieldset>
+                    <table>
+                        <tr>
+                            <td class="label"><p>Name: </p></td>
+                            <td><input id="name" type="text" name="name" /></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><p>Student ID: </p></td>
+                            <td><input id="student_id" type="text" name="student_id"/></td>
+                        </tr>
+                        <tr>
+                            <td class="label"><p>Assignment</p></td>
+                            <td>
+                                <select id="assignment" name="assignment" required>
+                                    <option value="">Select one</option>
+                                    <option value="mid_term">Mid Term Grades</option>
+                                    <option value="final">Final Grades</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><p>Select entry: </p></td>
+                            <td>
+                                <label><input type="radio" name="entry"/> August 2021</label>
+                                <label><input type="radio" name="entry"/> November 2021</label>
+                                <label><input type="radio" name="entry"/> February 2022</label> 
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="label"><p>Confirmation:</p></td>
+                            <td>
+                                <label><input type="checkbox" name="confirmation"/> This is my grade</label>
+                            </td>
+                        </tr>
+                    </table>
+                    <br>
+                    <button type="submit">Get Grade!</button>
+                </fieldset>
+            </form>
+        </div>
+    </body>
+</html>
