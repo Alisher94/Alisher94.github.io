@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="task_list.css" type="text/css" rel="stylesheet">
+    <title>Task List Lab</title>
+</head>
+<body>
+    <div class="content">
+        <h1>Task List</h1>
+        <div class="wokspace">
+            <label>Task</label><br>
+            <input id="task_input" type="text" ><br>
+            <button id="add_task" onclick="addTask()" type="button">Add Task</button><br>
+            <button id="clear_task" type="button" onclick="clearTasks()">Clear Tasks</button>
+        </div>
+        <div class="result">
+            <label>Task List</label><br>
+            <textarea id="task_result" rows="5"></textarea>
+        </div>
+    </div>
+</body>
+<script>
+    var task_list = [];
+    function addTask(){
+        var new_task = document.getElementById("task_input").value
+        task_list.push(new_task)
+        localStorage.setItem("items", task_list)
+        
+        document.getElementById("task_input").value = ""
+        document.getElementById("task_result").value = localStorage.getItem("items").split(",").join("\n")
+
+    }
+
+    function clearTasks(){
+        localStorage.clear();
+        task_list = [];
+        document.getElementById("task_result").value = ""
+    }
+</script>
+</html>
