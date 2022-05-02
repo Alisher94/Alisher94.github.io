@@ -1,0 +1,13 @@
+body {
+    font-family: "Arial", "Helvetica", sans-serif;
+}
+
+h1 {
+    font-style: italic;
+    font-size: 36px;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 24px;
+}
