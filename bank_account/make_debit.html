@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="bank.css" type="text/css" rel="stylesheet">
+    <script src="Account.js"></script>
+    <script src="main.js"></script>
+    <title>Deposit</title>
+</head>
+<body>
+    <label>Account name: </label>
+    <select id="select" style="width: 200px;" required></select><br>
+    <label>Debit: </label> <input id="debit_value" type="text"><br>
+    <button id="make_deposit" type="button">Make debit</button>
+</body>
+<script>
+    window.onload = function () {
+        document.getElementById("make_deposit").onclick = makeDeposit
+
+        select = document.getElementById('select');
+        var opt = document.createElement('option');
+        opt.value = "";
+        opt.innerHTML = "Select an account";
+        select.appendChild(opt);
+        var c = 0;
+        for(var item of JSON.parse(localStorage.accounts)){
+            var opt = document.createElement('option');
+            opt.value = c;
+            opt.innerHTML = item.name;
+            select.appendChild(opt);
+            c++;
+        }
+    }
+    function makeDeposit(){
+        if(document.getElementById("select").value.length == 0 || document.getElementById("debit_value").value.length == 0){
+            alert("Please, fill all inputs!");
+        }else{
+            if(localStorage.accounts != undefined){
+                Account.accountInfoList = JSON.parse(localStorage.accounts);
+            }
+            var c = 0;
+            for(var item of JSON.parse(localStorage.accounts)){
+                if(c == document.getElementById("select").value){
+                    var bal = item.balance - parseFloat(document.getElementById("debit_value").value);
+                    Account.accountInfoList[c] = {name: item.name, balance: bal}
+                }
+                c++;
+            }
+            localStorage.setItem("accounts", JSON.stringify(Account.accountInfoList));
+            window.location.href = "bank.html";
+
+        }
+    }
+</script>
+</html>
