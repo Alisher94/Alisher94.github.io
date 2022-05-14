@@ -5,9 +5,12 @@ $(document).ready(function () {
 });
 
 var positionArray = [];
+var divs 
+var spaceX = '300px'; 
+var	spaceY = '300px';
 var  init = function() {
     var puzzleArea = document.getElementById('puzzlearea');
-    var divs = puzzleArea.getElementsByTagName("div");
+    divs = puzzleArea.getElementsByTagName("div");
         
     // initialize each piece
     for (var i=0; i< divs.length; i++) {
@@ -23,12 +26,29 @@ var  init = function() {
         div.style.top = y + 'px';
         div.style.backgroundImage = 'url("background.jpg")';
         div.style.backgroundPosition = -x + 'px ' + (-y) + 'px';
-        
+
         // store x and y for later
         div.x = x;
         div.y = y; 
         var point = {x:x, y:y , bgP:div.style.backgroundPosition };
         positionArray.push(point);
+
+
+        div.onmouseover = function(){
+			if (checkMove(this)){
+                this.style.border = "3px solid red";
+                this.style.color = "#006600";
+                this.style.textDecoration = "underline";
+			}
+		}
+
+        div.onmouseout = function(){
+			this.style.border = "2px solid black"; 
+			this.style.color = "#000000"; 
+			this.style.textDecoration = "none";
+		};
+
+        div.onclick = move
     }    
       
 };
@@ -36,7 +56,6 @@ var  init = function() {
 
 
 var shufflePicture  = function () {
-    alert ('shuffle');
 
     var divElements =  $("#puzzlearea").children('div');
 
@@ -74,5 +93,28 @@ var shuffleGivenArray = function (arr) {
 
     return arr;
 };
+
+
+var row = 300
+var col = 300
+
+function move() {
+    if (checkMove(this)) {
+        this.style.left = (parseInt(this.style.left) + -1 * (this.x - row)) + "px";
+        this.style.top = (parseInt(this.style.top) + -1 * (this.y - col)) + "px";
+        row = this.x;
+        col = this.y;
+        this.x = parseInt(this.style.left);
+        this.y = parseInt(this.style.top);
+    }
+}
+
+function checkMove(piece) {
+    if (Math.abs(piece.x - row) == 100 && Math.abs(piece.y - col) == 0 ||
+        Math.abs(piece.y - col) == 100 && Math.abs(piece.x - row) == 0)
+        return true;
+    return false;
+}
+
 
 
