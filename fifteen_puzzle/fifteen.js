@@ -73,6 +73,8 @@ var shufflePicture  = function () {
         item.style.backgroundPosition = item.bgP;
         $("#puzzlearea").append(item);
     }
+    row = 300
+    col = 300
 };
 
 var shuffleGivenArray = function (arr) {
